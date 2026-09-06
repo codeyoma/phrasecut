@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Local jobs, recordings, and machine-specific files
+.phrasecut/
+*.phrasecut.lock
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.aiff
+*.zip
+*.npy
+*.f32
+.DS_Store
+.env
+.env.*
+!.env.example
+.coverage
+htmlcov/

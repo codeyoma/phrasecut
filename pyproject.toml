@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phrasecut"
+version = "0.1.0"
+description = "Split recordings into script-aligned MP3 phrases, locally."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "rapidfuzz>=3.6", "imageio-ffmpeg>=0.6", "filelock>=3.13", "fugashi[unidic-lite]>=1.5"]
+
+[project.urls]
+Repository = "https://github.com/codeyoma/phrasecut"
+Issues = "https://github.com/codeyoma/phrasecut/issues"
+
+[project.optional-dependencies]
+asr = ["mlx-whisper>=0.4.3"]
+dev = ["pytest>=8", "build>=1", "ruff>=0.9"]
+
+[project.scripts]
+phrasecut = "phrasecut.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 110
